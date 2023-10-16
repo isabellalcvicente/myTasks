@@ -45,6 +45,14 @@ const TodasAsTarefas = () => {
     setTodasAsTarefas(novoArray);
   };
   
+
+  const checked=(id,check)=>{
+    const index=arrayTarefas.findIndex(tarefa=>tarefa.id== id);
+    const novoArray=arrayTarefas
+    novoArray[index].check=!check;
+    setTodasAsTarefas([...novoArray])
+  };
+
   return (
     <StyledBody>
       <Container>
@@ -70,6 +78,9 @@ const TodasAsTarefas = () => {
                 <Flex direction="row">
                   <button onClick={()=> deletarTarefa(tarefa.id)}>
                      <i className="bi bi-trash" > </i> 
+                  </button>
+                  <button onClick={()=> checked(tarefa.id, tarefa.check)}>
+                     <i className="bi bi-check"></i> 
                   </button>
                   </Flex>
               <Spacer margin="12px" />
