@@ -4,8 +4,7 @@ import { StyledHeader } from './header.styles'
 const Header = () => {
   return (
     <StyledHeader>
-        <h1>My Tasks</h1>
-        <h2>Pesquisar tarefa</h2>
+        <h1 className='titulo'>My Tasks</h1>
     </StyledHeader>
       
   )

@@ -2,3 +2,5 @@
 2. apaga os app, index etc 
 2. cria a pasta page, a pasta LP e o arquivo LP 
 3. puxa o rafce
+
+//se novaTarefa n estiver em TodasTarefas, então crie e add ao TodasTarefas
