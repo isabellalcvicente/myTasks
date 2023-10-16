@@ -40,9 +40,44 @@ const TodasAsTarefas = () => {
   }
 
 
+  const deletarTarefa = (id) => {
+    const novoArray = arrayTarefas.filter((tarefa) => tarefa.id !== id);
+    setTodasAsTarefas(novoArray);
+  };
+  
   return (
-    <div>CriarTarefa</div>
-  )
-}
-
-export default CriarTarefa
+    <StyledBody>
+      <Container>
+        <h2>Essas são todas as suas tarefas:</h2>
+       <Spacer />
+        <Flex direction="row" justify="space-between">
+          <div>
+          <Input
+            type="text"
+            value={tarefa}
+            onChange={(e) => setTarefa(e.target.value)}
+          />
+          <Button onClick={addTarefa}>Adicionar</Button>
+        </div>
+        </Flex>
+        <ul>
+          {arrayTarefas
+          .filter((tarefa)=> tarefa.descricao && tarefa.descricao.toLowerCase().includes(pesquisar&&pesquisar.toLowerCase()))
+          .map((tarefa) => (
+            <Item check={tarefa.check}  key={tarefa.id}>
+              
+                <p> {tarefa.descricao} </p>
+                <Flex direction="row">
+                  <button onClick={()=> deletarTarefa(tarefa.id)}>
+                     <i className="bi bi-trash" > </i> 
+                  </button>
+                  </Flex>
+              <Spacer margin="12px" />
+            </Item>
+          ))}
+        </ul>  
+      </Container>
+    </StyledBody>
+)
+        }
+export default Body
