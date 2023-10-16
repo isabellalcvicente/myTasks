@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
-const TodasAsTarefas = () => {
+const Body = () => {
   //armazena todas as tarefas no seu estado 0
   
   
@@ -39,7 +39,6 @@ const TodasAsTarefas = () => {
       alert("Tarefa não pode ser vazia.");
     }
   }
-
 
   const deletarTarefa = (id) => {
     const novoArray = arrayTarefas.filter((tarefa) => tarefa.id !== id);
