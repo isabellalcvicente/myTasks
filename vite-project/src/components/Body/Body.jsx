@@ -53,6 +53,14 @@ const TodasAsTarefas = () => {
     setTodasAsTarefas([...novoArray])
   };
 
+
+  const editarTarefa = (id, novaDescricao) => {
+    const tarefasEditadas = arrayTarefas.map((tarefa) =>
+      tarefa.id === id ? { ...tarefa, descricao: novaDescricao } : tarefa
+    );
+    setTodasAsTarefas(tarefasEditadas);
+  };
+
   return (
     <StyledBody>
       <Container>
@@ -82,6 +90,11 @@ const TodasAsTarefas = () => {
                   <button onClick={()=> checked(tarefa.id, tarefa.check)}>
                      <i className="bi bi-check"></i> 
                   </button>
+                  <button onClick={() => editarTarefa(tarefa.id,  prompt('Editar tarefa:', tarefa.descricao))}>
+                        <i className="bi bi-pencil"></i>
+                  </button>
+                
+
                   </Flex>
               <Spacer margin="12px" />
             </Item>
