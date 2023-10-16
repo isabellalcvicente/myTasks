@@ -10,6 +10,7 @@ const TodasAsTarefas = () => {
   
   
   const [tarefa, setTarefa] = useState("");
+  const [pesquisar,setPesquisar]=useState('')
   const [arrayTarefas, setTodasAsTarefas] = useState([
     {
       id: 1,
@@ -65,6 +66,8 @@ const TodasAsTarefas = () => {
     <StyledBody>
       <Container>
         <h2>Essas são todas as suas tarefas:</h2>
+        <h3 pesquisar={pesquisar} setPesquisar={setPesquisar}> Pesquisar:</h3>
+        <input type="text" value={pesquisar} onChange={(e)=>setPesquisar(e.target.value)}/>
        <Spacer />
         <Flex direction="row" justify="space-between">
           <div>
